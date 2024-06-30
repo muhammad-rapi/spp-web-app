@@ -1,10 +1,15 @@
 {
     "version": 2,
     "framework": null,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.5.5" }
-    },
+    "builds": [
+        { "src": "/api/index.php", "use": "vercel-php@0.5.5" },
+        { "src": "/public/**", "use": "@vercel/static" }
+    ],
     "routes": [
+        {
+            "src": "/(css|js)/(.*)",
+            "dest": "public/$1/$2"
+        },
         {
             "src": "/(.*)",
             "dest": "/api/index.php"
@@ -12,7 +17,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://spp-web-app.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
@@ -24,6 +29,8 @@
 
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
     }
 }
