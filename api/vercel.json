@@ -2,7 +2,7 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.2" }
+        "api/index.php": { "runtime": "vercel-php@0.3.1" }
     },
     "routes": [
         {
@@ -13,15 +13,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://spp-web-app.vercel.app",
-        "APP_KEY=base64": "85SYRqNM3CeTBjFX9tnDTtiFifZz+oDQKlKYejcWtCE=",
-
-        "DB_CONNECTION": "pgsql",
-        "DB_HOST": "aws-0-ap-southeast-1.pooler.supabase.com",
-        "DB_PORT": "6543",
-        "DB_DATABASE": "postgres",
-        "DB_USERNAME": "postgres.sjoilaxbgaletalzwpan",
-        "DB_PASSWORD": "BismillahSukses123",
+        "APP_URL": "https://sp-web-app.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
