@@ -1,26 +1,29 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "public/index.php",
-            "use": "@vercel/php"
-        }
-    ],
+    "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.3.1" }
+    },
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/public/index.php"
+            "dest": "/api/index.php"
         }
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_KEY": "base64:85SYRqNM3CeTBjFX9tnDTtiFifZz+oDQKlKYejcWtCE=",
-        "DB_CONNECTION": "pgsql",
-        "DB_HOST": "aws-0-ap-southeast-1.pooler.supabase.com",
-        "DB_PORT": "6543",
-        "DB_DATABASE": "postgres",
-        "DB_USERNAME": "postgres.sjoilaxbgaletalzwpan",
-        "DB_PASSWORD": "BismillahSukses123"
+        "APP_DEBUG": "true",
+        "APP_URL": "https://spp-web-app.vercel.app",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
     }
 }
